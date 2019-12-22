@@ -23,21 +23,21 @@ public class HelloController {
 	@Scheduled(fixedRate = 10000)
 	public String hello() {
 		System.out.println(new Timestamp(System.currentTimeMillis()));
-		return "Welcome Sumanth ..!!"+UUID.randomUUID().toString();
+		return "With fixed rate ..!!";
 	}
 	
 	@GetMapping("/hello1")
 	@Scheduled(fixedDelay = 10000)
 	public String hello1() {
 		System.out.println(new Timestamp(System.currentTimeMillis()));
-		return "Welcome Sumanth ..!!"+UUID.randomUUID().toString();
+		return "With fixed delay ..!!";
 	}
 	
 	@GetMapping("/hello2")
 	@Scheduled(cron = "0 1 1 1 1 1 1")
 	public String hello2() {
 		System.out.println(new Timestamp(System.currentTimeMillis()));
-		return "Welcome Sumanth ..!!"+UUID.randomUUID().toString();
+		return "With Cron  ..!!";
 	}
 
 }
